@@ -1,0 +1,36 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: himanshu1005
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: vendor-response-scorer
+service: vendor-response-scorer
+
+provider:
+  name: aws
+  runtime: python3.10
+  region: ap-south-1 
+  httpApi:
+    cors: true
+
+functions:
+  vendorResponseScorer:
+    handler: handler.lambda_handler
+    timeout: 30
+    events:
+      - http:
+          path: score
+          method: post
+
+plugins:
+   - serverless-python-requirements
+   - serverless-offline
+
+custom:
+  pythonRequirements:
+     dockerizePip: true      
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+    - .venv/**
+    - pdenv/**
