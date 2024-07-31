@@ -19,6 +19,13 @@ functions:
       - http:
           path: score
           method: post
+  topScorerResponse:
+   handler: top_vendors_handler.lambda_handler
+   timeout: 30
+   events:
+      - http:
+          path: top_vendors
+          method: post
 
 plugins:
    - serverless-python-requirements

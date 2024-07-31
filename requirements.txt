@@ -44,9 +44,10 @@ typing-inspect==0.9.0
 typing_extensions==4.12.2
 urllib3==2.2.2
 yarl==1.9.4
+# joblib==1.4.2
+# kneed==0.8.5
+# numpy==2.0.0
 
-pydantic==2.7.3
-langchain-core==0.1.52
-langchain-community==0.0.38
-langchain-openai==0.0.5
-requests==2.32.3
+
+pandas==2.2.2
+
